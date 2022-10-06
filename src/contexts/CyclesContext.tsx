@@ -2,6 +2,7 @@ import { differenceInSeconds } from 'date-fns'
 import { useReducer, createContext, useState, ReactNode, useEffect } from 'react'
 import { addNewCycleAction, interruptCurrentCycleAction, markCurrentCycleAsFinishedAction } from '../reducers/cycles/actions'
 import { cyclesReducer, ICycle } from '../reducers/cycles/reducer'
+import audioConclusion from '../assets/audio/You_will_Never_Walk_Alone.mp3';
 
 interface ICreateCycleData {
   task: string
@@ -68,6 +69,10 @@ export function CyclesContextProvider({
 
   function markCurrentCycleAsFinished() {
     dispatch(markCurrentCycleAsFinishedAction())
+
+    if(Notification.permission === 'granted') {
+      new Audio(audioConclusion).play();
+    }
   }
 
   function setSecondsPassed(seconds: number) {

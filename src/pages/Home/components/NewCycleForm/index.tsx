@@ -20,7 +20,7 @@ export function NewCycleForm() {
       />
 
       <datalist id="task-suggestions">
-        {
+        { cycles && 
           cycles.map((cycle) => {
             return (
               <option key={cycle.id} value={cycle.task}></option>
@@ -36,8 +36,8 @@ export function NewCycleForm() {
         id="minutesAmount"
         placeholder="00"
         disabled={!!activeCycle}
-        step={5}
-        min={5}
+        step={1}
+        min={1}
         max={60}
         {...register('minutesAmount', { valueAsNumber: true })}
       />
