@@ -5,7 +5,6 @@ import { defaultTheme } from './style/themes/default'
 import { BrowserRouter } from 'react-router-dom'
 import { CyclesContextProvider } from './contexts/CyclesContext'
 function App() {
-  Notification.requestPermission();
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>

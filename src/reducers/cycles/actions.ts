@@ -23,6 +23,6 @@ export function interruptCurrentCycleAction() {
 
 export function markCurrentCycleAsFinishedAction() {
   return {
-    type: ActionTypes.INTERRUPT_CURRENT_CYCLE
+    type: ActionTypes.MARK_CURRENT_CYCLE_AS_FINISHED
   }
 }
